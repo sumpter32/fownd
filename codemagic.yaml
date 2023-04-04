@@ -1,0 +1,5 @@
+workflows:
+    sample-workflow:
+        name: Fownd
+        max_build_duration: 120
+        instance_type: IOS
