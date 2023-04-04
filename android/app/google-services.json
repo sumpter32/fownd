@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "209365425642",
+    "project_id": "fownd-292b7",
+    "storage_bucket": "fownd-292b7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209365425642:android:701de67bd5db46f8986693",
+        "android_client_info": {
+          "package_name": "com.fownd.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209365425642-0n6hr7oc90tlvul9hdr8toc16vrn89v1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn1SyDtV-9PZhcU0ePMwkcHpsknZyuMvc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209365425642-0n6hr7oc90tlvul9hdr8toc16vrn89v1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "E:\\App Devlopment\\Main\\Fownd\\build\\path_provider_android\\intermediates\\merged_res\\release\\drawable\\notification_bg.xml",
+        "source": "C:\\Users\\sumpt\\.gradle\\caches\\transforms-3\\2f458ce8f7f4d9c94c832d5b4782ed15\\transformed\\core-1.6.0\\res\\drawable\\notification_bg.xml"
+    },
+    {
+        "merged": "E:\\App Devlopment\\Main\\Fownd\\build\\path_provider_android\\intermediates\\merged_res\\release\\drawable\\notification_icon_background.xml",
+        "source": "C:\\Users\\sumpt\\.gradle\\caches\\transforms-3\\2f458ce8f7f4d9c94c832d5b4782ed15\\transformed\\core-1.6.0\\res\\drawable\\notification_icon_background.xml"
+    },
+    {
+        "merged": "E:\\App Devlopment\\Main\\Fownd\\build\\path_provider_android\\intermediates\\merged_res\\release\\drawable\\notification_tile_bg.xml",
+        "source": "C:\\Users\\sumpt\\.gradle\\caches\\transforms-3\\2f458ce8f7f4d9c94c832d5b4782ed15\\transformed\\core-1.6.0\\res\\drawable\\notification_tile_bg.xml"
+    },
+    {
+        "merged": "E:\\App Devlopment\\Main\\Fownd\\build\\path_provider_android\\intermediates\\merged_res\\release\\drawable\\notification_bg_low.xml",
+        "source": "C:\\Users\\sumpt\\.gradle\\caches\\transforms-3\\2f458ce8f7f4d9c94c832d5b4782ed15\\transformed\\core-1.6.0\\res\\drawable\\notification_bg_low.xml"
+    }
+]
