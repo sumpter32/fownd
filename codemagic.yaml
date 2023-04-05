@@ -1,10 +1,37 @@
 workflows:
-    sample-workflow:
-        name: iOS Workflow 
-        max_build_duration: 120
-        instance_type: IOS
-        flutter: stable
-         environment:
+  sample-workflow:
+    name: iOS Workflow
+    max_build_duration: 120
+    instance_type: IOS
+    flutter: stable
+    environment:
+      vars:
+        APP_ID: 6447272649 # <-- Put your APP ID here
       ios_signing:
-        distribution_type: app_store development
+        distribution_type: app_store
         bundle_identifier: app.fownd.fownd
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+    integrations:
+      app_store_connect: Codemagic
+    scripts:
+      - name: Set up code signing settings on Xcode project
+        script: | 
+          xcode-project use-profiles
+      - name: Get Flutter packages
+        script: | 
+          flutter packages pub get
+      - name: Install pods
+        script: | 
+          find . -name "Podfile" -execdir pod install \;
+      - name: Flutter build ipa
+        script: | 
+          BUILD_NUMBER=$(($(app-store-connect get-latest-app-store-build-number "$APP_ID") + 1))
+          flutter build ipa --release \
+            --build-name=1.0.$BUILD_NUMBER \
+            --build-number=$BUILD_NUMBER
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+      - flutter_drive.log
