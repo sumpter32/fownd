@@ -5,8 +5,8 @@ workflows:
     instance_type: mac_mini
     environment:
       ios_signing:
-        distribution_type: app_store
-        bundle_identifier: Fownd-Market-Directory
+        distribution_type: development
+        bundle_identifier: app.fownd.fownd
       vars:
         APP_ID: 6447272649 # <-- Put your APP ID here
         APP_STORE_CONNECT_API_KEY: Codemagic # <-- Put the name of your API key here
