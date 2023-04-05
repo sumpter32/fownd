@@ -5,20 +5,27 @@ workflows:
     instance_type: mac_mini
     environment:
       ios_signing:
-        distribution_type: development
-        bundle_identifier: Fownd
+        distribution_type: app_store
+        bundle_identifier: app.fownd.fownd
       vars:
-        APP_ID: 6447272649 # <-- Put your APP ID here
-        APP_STORE_CONNECT_API_KEY: Codemagic # <-- Put the name of your API key here
+        APP_ID: 6447272649
+        APP_STORE_CONNECT_API_KEY: CodeMagic
+      flutter: stable
       xcode: latest
       cocoapods: default
 
-    # Add your build and test scripts here
+    # Build and test scripts
+    scripts:
+      - name: Get Flutter packages
+        script: flutter packages get
+      - name: Build IPA for distribution
+        script: flutter build ipa --release
 
-    # Add the integrations and publishing sections
+    # Integrations and publishing sections
     integrations:
       app_store_connect: $APP_STORE_CONNECT_API_KEY
     publishing:
       app_store_connect:
         auth: integration
         submit_to_testflight: true
+        cancel_previous_submissions: true
