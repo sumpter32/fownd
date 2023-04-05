@@ -2,8 +2,7 @@ workflows:
   sample-workflow:
     name: iOS Workflow
     max_build_duration: 120
-    instance_type: IOS
-    flutter: stable
+    instance_type: mac_mini
     environment:
       vars:
         APP_ID: 6447272649 # <-- Put your APP ID here
