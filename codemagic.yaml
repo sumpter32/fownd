@@ -9,7 +9,7 @@ workflows:
         bundle_identifier: app.fownd.fownd
       vars:
         APP_ID: 6447272649
-        APP_STORE_CONNECT_API_KEY: CodeMagic
+        APP_STORE_CONNECT_API_KEY: NewKEy
       flutter: stable
       xcode: latest
       cocoapods: default
