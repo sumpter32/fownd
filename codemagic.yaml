@@ -2,7 +2,7 @@ workflows:
   sample-workflow:
     name: iOS Workflow
     max_build_duration: 120
-    instance_type: IOS
+    instance_type: mac_mini
     flutter: stable
     environment:
       ios_signing:
