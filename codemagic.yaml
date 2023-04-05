@@ -9,8 +9,8 @@ workflows:
         distribution_type: app_store
         bundle_identifier: app.fownd.fownd
       vars:
-        APP_ID: 6447272649 # <-- Put your APP ID here
-        APP_STORE_CONNECT_API_KEY: Codemagic # <-- Put the name of your API key here
+        APP_ID: 6447272649 
+        APP_STORE_CONNECT_API_KEY: Codemagic
       flutter: stable
       xcode: latest
       cocoapods: default
@@ -19,7 +19,7 @@ workflows:
 
     # Add the integrations and publishing sections
     integrations:
-      app_store_connect: $APP_STORE_CONNECT_API_KEY
+      app_store_connect: Codemagic
     publishing:
       app_store_connect:
         auth: integration
