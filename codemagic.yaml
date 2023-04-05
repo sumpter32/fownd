@@ -11,7 +11,7 @@ workflows:
         APP_ID: 6447272649
         APP_STORE_CONNECT_API_KEY: NewKEy
       flutter: stable
-      xcode: 14
+      xcode: 14.2
       cocoapods: default
 
     # Build and test scripts
