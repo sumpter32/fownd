@@ -17,6 +17,10 @@ workflows:
     scripts:
       - name: Get Flutter packages
         script: flutter packages get
+      - name: Set up provisioning profiles
+        script: |
+          PROVISIONING_PROFILE_SPECIFIER="App-Store-profiles"
+          echo "PROVISIONING_PROFILE_SPECIFIER=$PROVISIONING_PROFILE_SPECIFIER" >> $FLUTTER_ROOT/codemagic.yaml
       - name: Build and sign IPA for distribution
         script: |
           xcode-project use-profiles
