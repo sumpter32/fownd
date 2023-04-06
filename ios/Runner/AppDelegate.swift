@@ -2,10 +2,8 @@ import UIKit
 import Flutter
 import GoogleMaps
 import Firebase
-import UserNotifications
 
 @UIApplicationMain
-@available(iOS 10.0, *)
 @objc class AppDelegate: FlutterAppDelegate {
   override func application(
     _ application: UIApplication,
@@ -13,5 +11,8 @@ import UserNotifications
   ) -> Bool {
     GMSServices.provideAPIKey("AIzaSyCUwR60JXqQWI5nX1t_oxZyDx-GQxVSgKw")
     FirebaseApp.configure() //add this before the code below
-    
+
+    GeneratedPluginRegistrant.register(with: self)
+    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+  }
 }
