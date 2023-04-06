@@ -5,6 +5,7 @@ import Firebase
 import UserNotifications
 
 @UIApplicationMain
+@available(iOS 10.0, *)
 @objc class AppDelegate: FlutterAppDelegate {
   override func application(
     _ application: UIApplication,
@@ -22,12 +23,12 @@ import UserNotifications
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
   
-  // Add the 'override' keyword
+  @available(iOS 10.0, *)
   override func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
       completionHandler([.banner, .badge, .sound])
   }
 
-  // Add the 'override' keyword
+  @available(iOS 10.0, *)
   override func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
       completionHandler()
   }
