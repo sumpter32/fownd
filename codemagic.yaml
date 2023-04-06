@@ -25,7 +25,7 @@ workflows:
         script: |
           xcode-project use-profiles
           flutter build ipa --release
-          xcodebuild archive -workspace ios/Runner.xcworkspace -scheme Runner -archivePath build/ios/archive/Runner.xcarchive -allowProvisioningUpdates
+          xcodebuild archive -workspace ios/Runner.xcworkspace -scheme Runner -archivePath build/ios/archive/Runner.xcarchive
           xcodebuild -exportArchive -archivePath build/ios/archive/Runner.xcarchive -exportPath build/ios/ipa -exportOptionsPlist ios/Runner/ExportOptions.plist
     artifacts:
       - build/ios/ipa/*.ipa
