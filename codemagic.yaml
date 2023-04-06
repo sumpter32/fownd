@@ -1,30 +1,32 @@
 workflows:
-  sample-workflow:
+  ios-workflow:
     name: iOS Workflow
     max_build_duration: 120
     instance_type: mac_mini_m1
     environment:
       ios_signing:
-        distribution_type: development
+        distribution_type: app_store
         bundle_identifier: app.fownd.fownd
       vars:
-        APP_ID: 6447272649
-        APP_STORE_CONNECT_API_KEY: NewKEy
+        APP_ID: app.fownd.fownd
+        PROVISIONING_PROFILE: App-Store-profiles
+        CERTIFICATE: signing-certificate
       flutter: stable
       xcode: 14.2
       cocoapods: default
-
-    # Build and test scripts
     scripts:
       - name: Get Flutter packages
         script: flutter packages get
-      - name: Build IPA for distribution
-        script: flutter build ipa --release
-
-    # Integrations and publishing sections
-    integrations:
-      app_store_connect: $APP_STORE_CONNECT_API_KEY
+      - name: Build and sign IPA for distribution
+        script: |
+          xcode-project use-profiles
+          flutter build ipa --release
+          xcodebuild archive -workspace ios/Runner.xcworkspace -scheme Runner -archivePath build/ios/archive/Runner.xcarchive -allowProvisioningUpdates
+          xcodebuild -exportArchive -archivePath build/ios/archive/Runner.xcarchive -exportPath build/ios/ipa -exportOptionsPlist ios/Runner/ExportOptions.plist
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
     publishing:
-      app_store_connect:
-        auth: integration
-        submit_to_testflight: true
+      email:
+        recipients:
+          - steven@srsdesignsllc.com
